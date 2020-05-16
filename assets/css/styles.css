@@ -1,8 +1,15 @@
 /* Show it is fixed to the top */
 body {
-  min-height: 75rem;
+  min-height: 120rem;
+}
+.jumbotron{
+  height: 22rem;
+}
+.header {
+  height: 24rem;
   padding-top: 4.5rem;
-  }
+  padding-bottom: 27.5rem;
+}
 .title {
   font-size: 72px;
   background: -webkit-linear-gradient(#96c93d, #00b09b);
@@ -15,6 +22,7 @@ body {
   background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -28,3 +36,11 @@ body {
       font-size: 3.5rem;
     }
   }
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+}

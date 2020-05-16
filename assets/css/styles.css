@@ -4,6 +4,8 @@ body {
 }
 .jumbotron{
   height: 22rem;
+  width: 95%;
+  margin:auto;
 }
 .header {
   height: 24rem;
@@ -21,6 +23,9 @@ body {
   background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+.main-color {
+  color: #00b09b;  /* fallback for old browsers */
 }
 
 .bd-placeholder-img {
@@ -40,7 +45,28 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: yellow;
   padding: 50px;
   font-size: 20px;
+}
+.card-deck{
+  padding-top: 1.5rem;
+}
+.card {
+  padding-top: 1.5rem;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to right, #96c93d, #00b09b);
+}
+
+.card-img-top{
+  height: 80px;
+  width: 80px;
+  margin: auto;
+}
+.fa {
+padding-top: 1.0rem;
+padding-bottom: 0.5rem;
+margin: auto;
+color: linear-gradient(to right, red, orange);
 }

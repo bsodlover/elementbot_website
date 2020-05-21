@@ -2,6 +2,9 @@
 body {
   min-height: 120rem;
 }
+.bg-dark{
+  background-color: #151618;
+}
 .jumbotron{
   height: 22rem;
   width: 95%;
@@ -13,10 +16,10 @@ body {
   padding-bottom: 27.5rem;
 }
 .title {
-  font-size: 72px;
   background: -webkit-linear-gradient(#96c93d, #00b09b);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 1.5rem;
 }
 .main-gradient-bg {
   background: #00b09b;  /* fallback for old browsers */
@@ -41,13 +44,7 @@ body {
       font-size: 3.5rem;
     }
   }
-.sticky-nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 50px;
-  font-size: 20px;
-}
+
 .card-deck{
   padding-top: 1.5rem;
 }
@@ -68,5 +65,14 @@ body {
 padding-top: 1.0rem;
 padding-bottom: 0.5rem;
 margin: auto;
-color: linear-gradient(to right, red, orange);
+}
+.contact-box {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+.top-padding {
+  padding-bottom: 1rem;
 }

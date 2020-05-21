@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Fixed top navbar example · Bootstrap</title>
+    <meta name="description" content="Element Bot Website">
+    <title>ElementBot</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
 <link href="./assets/css/bootstrap.min.css" rel="stylesheet" >
 <link href="./assets/css/styles.css" rel="stylesheet" >
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -20,7 +19,7 @@
 <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><!--load all fontawesome styles -->
+<script src="https://kit.fontawesome.com/6398d1255e.js" crossorigin="anonymous"></script>
 <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#563d7c">
     <!-- Custom styles for this template -->
@@ -29,38 +28,69 @@
   <body class="bg-dark">
 <div class="main-gradient-bg header"><!--header-->
 <main role="main" class="text-white">
-  <div class="jumbotron bg-dark text-center">
+  <div data-aos="fade-right" class="jumbotron bg-dark text-center">
     <h1 class="title">Element Bot</h1>
     <p class="lead">The best <strong>NSFW, XP and FUN </strong> discord bot packed with a lot of features, for free</p>
-  <a class="btn main-gradient-bg center text-black-50">Invite ElementBot to you discord server!</a>  
+  <a class="btn main-gradient-bg center text-dark">Invite ElementBot to you discord server!</a>  
 </div>
 </main>
 </div><!--./header-->
-<nav class="navbar navbar-expand-md navbar-dark sticky-top main-gradient-bg">
+<nav data-aos="fade-left" class="navbar navbar-expand-md navbar-dark sticky-top main-gradient-bg">
   <a class="navbar-brand" href="#">Fixed navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/?lang=EN" style="color: white !important;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/commands?lang=EN" style="color: white !important;">Commands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vote?lang=EN" style="color: white !important;">Vote</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats?lang=EN" style="color: white !important;">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/?lang=EN#invite" style="color: white !important;">Invite</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" style="color: white" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Review
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/review/reviews">Reviews</a></li>
+                        <li> <a class="dropdown-item" href="/review">Review</a></li>
+                    </ul>
+                </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" style="color: white" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Support
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://status.elementbot.net">Status</a></li>
+                            <li> <a class="dropdown-item" href="/discord">Support Discord Server</a></li>
+                            <li><a class="dropdown-item" href="https://docs.elementbot.net">Documentation</a></li>
+                        </ul>
+                    </li>
+
+            </ul>
+            
+            <ul class="navbar-right nav navbar">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/dashboard?lang=EN" style="color: white !important;">Log In</a>
+                  </li>  
+            </ul> 
+    
 </div>
-</nav><div class=" container  text-white">
+</nav>
+<div data-aos="fade-up" class="container text-white">
+  <h2 class="title text-center">Key features</h2>
   <div class="card-deck">
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-right" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-warning (alias) card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -69,7 +99,7 @@
           <p class="card-text">Element Bot  provides you the best NSFW content, directly from reddit.</p>
       </div>
     </div> <!-- ./card -->
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-top" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-sliders card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -78,7 +108,7 @@
           <p class="card-text">*INSERT MANAGMENT FEATURES*</p>
       </div>
     </div> <!-- ./card -->
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-left" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-smile-o card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -89,7 +119,7 @@
     </div> <!-- ./card -->
   </div> <!-- ./card-deck-->
   <div class="card-deck">
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-right" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-clock-o card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -98,7 +128,7 @@
           <p class="card-text">Thanks to our dedicated server and efficient coding, Element Bot is very stable and has low latency for a better experience.</p>
       </div>
     </div> <!-- ./card -->
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-top" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-gears card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -107,7 +137,7 @@
           <p class="card-text">Element bot selects random NSFW images and doesn't repeat them thanks to it's smart algorythm. </p>
         </div>
     </div> <!-- ./card -->
-    <div class="card bg-dark border-success">
+    <div data-aos="fade-left" class="card bg-dark border-success">
       <div class="card-img-top">
       <span class="fa fa-edit card-img-top text-center fa-3x main-color" alt="font-awesome icon of warning"></span>
       </div>
@@ -117,7 +147,62 @@
       </div>
     </div> <!-- ./card -->
   </div> <!-- ./card-deck-->
-</div> <!-- ./container-->
+  <div class="text-center">
+    <h2 class="title">Support</h2>
+    <div class="card-deck">
+    <div data-aos="fade-right" class="card contact-box bg-dark">
+      <a href="#" class="fab fa-4x fa-discord main-color"></a>
+    </div>
+    <div data-aos="fade-left" class="card contact-box bg-dark">
+      <a href="#" class="fa fa-4x fa-inbox main-color"></a>
+    </div>
+  </div>
+  </div><!-- ./support -->
+  <h2 class=" text-center title "> Team </h2>
+  <div class="text-center card-deck">
+  <div class="card bg-dark" style="width: 18rem;">
+  <img class="card-img-top" src="https://cdn.discordapp.com/avatars/476014121398173696/1099827b04445d385faf000773c757a8.webp" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title title">Todo#5505</h3>
+    <h6 class="lead">Developer, translator, investor</h6>
+    <p>PHP and Javascript programmer experienced in Object-Oriented programming.</p>
+    <i class="fa fa-2x fa-github main-color"></i> <i class="fa fa-2x fa-envelope main-color"></i> <i class="fab fa-2x fa-instagram main-color"></i> <i class="fa fa-2x fa-globe main-color"></i> <i class="fab fa-2x fa-twitter main-color"></i>
+  </div>
+</div>
+<div data-aos="fade-right" class="card bg-dark" style="width: 18rem;">
+  <img class="card-img-top" src="https://cdn.discordapp.com/avatars/476014121398173696/1099827b04445d385faf000773c757a8.webp" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title title">Todo#5505</h3>
+    <h6 class="lead">Developer, translator, investor</h6>
+    <p>PHP and Javascript programmer experienced in Object-Oriented programming.</p>
+    <i class="fa fa-2x fa-github main-color"></i> <i class="fa fa-2x fa-envelope main-color"></i> <i class="fab fa-2x fa-instagram main-color"></i> <i class="fa fa-2x fa-globe main-color"></i> <i class="fab fa-2x fa-twitter main-color"></i>
+  </div>
+</div>
+<div data-aos="fade-top" class="card bg-dark" style="width: 18rem;">
+  <img class="card-img-top" src="https://cdn.discordapp.com/avatars/476014121398173696/1099827b04445d385faf000773c757a8.webp" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title title">Todo#5505</h3>
+    <h6 class="lead">Developer, translator, investor</h6>
+    <p>PHP and Javascript programmer experienced in Object-Oriented programming.</p>
+    <i class="fa fa-2x fa-github main-color"></i> <i class="fa fa-2x fa-envelope main-color"></i> <i class="fab fa-2x fa-instagram main-color"></i> <i class="fa fa-2x fa-globe main-color"></i> <i class="fab fa-2x fa-twitter main-color"></i>
+  </div>
+</div>
+</div> <!-- ./card-deck -->
+<div class="card-deck text-center">
+<div data-aos="fade-top" class="card bg-dark" style="width: 6rem;">
+  <img class="card-img-top" src="https://cdn.discordapp.com/avatars/476014121398173696/1099827b04445d385faf000773c757a8.webp" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title title">Todo#5505</h3>
+    <h6 class="lead">Developer, translator, investor</h6>
+    <p>PHP and Javascript programmer experienced in Object-Oriented programming.</p>
+    <i class="fa fa-2x fa-github main-color"></i> <i class="fa fa-2x fa-envelope main-color"></i> <i class="fab fa-2x fa-instagram main-color"></i> <i class="fa fa-2x fa-globe main-color"></i> <i class="fab fa-2x fa-twitter main-color"></i>
+  </div>
+</div>
+  </div><!-- ./team -->
+  </div><!-- ./container--> 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./assets/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script></body>
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./assets/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script src="./assets/js/scripts.js"></script>
+    </body>
 </html>

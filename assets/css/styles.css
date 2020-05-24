@@ -1,78 +1,98 @@
 /* Show it is fixed to the top */
 body {
-  min-height: 120rem;
+	min-height: 120rem;
 }
-.bg-dark{
-  background-color: #151618;
+.bg-dark {
+	background-color: #151618 !important;
 }
-.jumbotron{
-  height: 22rem;
-  width: 95%;
-  margin:auto;
+.jumbotron {
+	height: 22rem;
+	width: 95%;
+	margin: auto;
 }
 .header {
-  height: 24rem;
-  padding-top: 4.5rem;
-  padding-bottom: 27.5rem;
+	height: 24rem;
+	padding-top: 4.5rem;
+	padding-bottom: 27.5rem;
 }
 .title {
-  background: -webkit-linear-gradient(#96c93d, #00b09b);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-top: 1.5rem;
+	background: -webkit-linear-gradient(#96c93d, #00b09b);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-top: 1.5rem;
 }
 .main-gradient-bg {
-  background: #00b09b;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+	background: #00b09b; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#96c93d,
+		#00b09b
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#96c93d,
+		#00b09b
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .main-color {
-  color: #00b09b;  /* fallback for old browsers */
+	color: #00b09b; /* fallback for old browsers */
 }
 
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
 
-.card-deck{
-  padding-top: 1.5rem;
+.card-deck {
+	padding-top: 1.5rem;
 }
 .card {
-  padding-top: 1.5rem;
-  border: 2px solid;
-  border-image-slice: 1;
-  border-width: 2px;
-  border-image-source: linear-gradient(to right, #96c93d, #00b09b);
+	padding-top: 1.5rem;
+	border: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #96c93d, #00b09b);
 }
 
-.card-img-top{
-  height: 80px;
-  width: 80px;
-  margin: auto;
+.card-img-top {
+	height: 80px;
+	width: 80px;
+	margin: auto;
 }
-.fa {
-padding-top: 1.0rem;
-padding-bottom: 0.5rem;
-margin: auto;
+.fa,
+.fab {
+	margin: auto;
 }
 .contact-box {
-  height: 10rem;
-  width: 10rem;
-  margin: auto;
-  padding-top: 2.5rem;
-  padding-bottom: 2rem;
+	height: 10rem;
+	width: 10rem;
+	margin: auto;
+	padding-top: 2.5rem;
+	padding-bottom: 2rem;
 }
 .top-padding {
-  padding-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+.navbar-nav {
+	margin: auto;
+}
+.nav-item {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.mauto{
+margin: auto;
+}
+@media only screen and (max-width: 768px) { /* for mobile hide the top padding */
+.card-deck {
+	padding-top: 0px;
+}
 }

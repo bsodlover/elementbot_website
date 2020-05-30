@@ -16,7 +16,6 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="./assets/css/styles.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<!-- Favicons -->
 		<link
@@ -52,8 +51,108 @@
 			content="/docs/4.5/assets/img/favicons/browserconfig.xml"
 		/>
 		<meta name="theme-color" content="#563d7c" />
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+		<link href="./assets/css/styles.css" rel="stylesheet" />
 		<!-- Custom styles for this template -->
 		<link href="navbar-top-fixed.css" rel="stylesheet" />
+<script>
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        let date = new Date();
+        let stringReg = new RegExp("&#34;", 'g');
+        let stringReg1 = new RegExp("&lt;", "g");
+        let stringReg2 = new RegExp("&gt;", "g");
+        let stringReg3 = new RegExp("\n", "g");
+        let cached_users = document.getElementById("cached_users")
+        let cms = JSON.parse('<%= cmsss%>'.replace(stringReg, '"'))
+        let stats = JSON.parse('<%= stats%>'.replace(stringReg, '"'))
+        $( document ).ready(function() {
+            let ctx = document.getElementById('commands_chart');
+            let labels = [];
+            let data = [];
+            let labels1 = [];
+            let borderColor = [];
+            let backgroundColor = [];
+            let dataset_users = [{
+                label: 'Users',
+                backgroundColor: '#3cba9f',
+                borderColor: '#3cba9f',
+                data: [],
+                fill: false
+            }]
+            let dataset_guilds = [{
+                label: 'Guilds',
+                backgroundColor: '#c45850',
+                borderColor: '#c45850',
+                data: [],
+                fill: false
+            }]
+            for (let i = 0; i < cms.length; i++) {
+                labels.push(cms[i].command)
+                data.push(cms[i].number_of_uses)
+                borderColor.push("#000000");
+                backgroundColor.push(getRandomColor())
+            }
+            for (let i = 0; i < stats.stats.length; i++) {
+                dataset_guilds[0].data.push(stats.stats[i].guilds)
+                dataset_users[0].data.push(stats.stats[i].users)
+
+                let date = new Date(stats.stats[i].time);
+                labels1.push(`${date.toISOString().replace("T", " ").slice(0, -5)}`)
+            }
+            setTimeout(function () {
+                let paras = document.getElementsByClassName('loader');
+                while (paras[0]) {
+                    paras[0].parentNode.removeChild(paras[0]);
+                }
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Commands Use',
+                            data: data,
+                            backgroundColor: backgroundColor,
+                            borderColor: borderColor,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {}
+                });
+                new Chart(document.getElementById("users_graph"), {
+                    type: 'line',
+                    data: {
+                        labels: labels1,
+                        datasets: dataset_users
+                    },
+                    options: {}
+                });
+                new Chart(document.getElementById("guilds_graph"), {
+                    type: 'line',
+                    data: {
+                        labels: labels1,
+                        datasets: dataset_guilds
+                    },
+                    options: {}
+                });
+            }, 1000)
+        });
+    </script>
+
 	</head>
 	<body class="bg-dark">
 		<div class="main-gradient-bg header">
@@ -201,111 +300,34 @@
 		<!-- end navbar-->
 		<!-- begin container-->
 		<div data-aos="fade-up" class="container text-white">
-			<h2 class="title text-center">Key features</h2>
-			<div class="card-deck">
+			<h2 class="title text-center">Most used commands</h2>
 				<div data-aos="fade-right" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-warning (alias) card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">The best NSFW content</h5>
-						<p class="card-text">
-							Element Bot provides you the best NSFW content, directly from
-							reddit.
-						</p>
-					</div>
+<div class="graph-div">
+            <div class="loader center-div"></div>
+            <canvas width="800" height="450" style="color: white" id="commands_chart" class="graph" width="400" height="400"></canvas><br>
+        </div>
 				</div>
 				<!-- ./card -->
-				<div data-aos="fade-top" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-sliders card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">A lot of managment features</h5>
-						<p class="card-text">
-							Element bot has managment features such as a welcome message,
-							leave message, custom events for the botlogs, lockdown system and
-							more.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-				<div data-aos="fade-left" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-smile-o card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Fun & XP system</h5>
-						<p class="card-text">
-							Element Bot has a big fun and XP system, to give levels to users
-							and have fun in the server.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-			</div>
-			<!-- ./card-deck-->
-			<div class="card-deck">
+
+			<h2 class="title text-center">Users Evolution</h2>
 				<div data-aos="fade-right" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-clock-o card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Fast & Stable</h5>
-						<p class="card-text">
-							Thanks to our dedicated server and efficient coding, Element Bot
-							is very stable and has low latency for a better experience.
-						</p>
-					</div>
+<div class="graph-div">
+            <div class="loader center-div"></div>
+						<canvas width="800" height="450" style="color: white" id="users_graph" class="graph" width="400" height="400"></canvas><br>
+        </div>
 				</div>
-				<!-- ./card -->
-				<div data-aos="fade-top" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-gears card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Smart Algorythm</h5>
-						<p class="card-text">
-							Element bot selects random NSFW images and doesn't repeat them
-							thanks to it's smart algorythm.
-						</p>
-					</div>
+				<!--./card-->
+			<h2 class="title text-center">Guild Evolution</h2>
+				<div data-aos="fade-right" class="card bg-dark border-success">
+<div class="graph-div">
+            <div class="loader center-div"></div>
+						<canvas width="800" height="450" style="color: white" id="guilds_graph" class="graph" width="400" height="400"></canvas><br>
+        </div>
 				</div>
-				<!-- ./card -->
-				<div data-aos="fade-left" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-edit card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Customizable & easy to use</h5>
-						<p class="card-text">
-							Element Bot has a lot of options, that are easily customizable
-							with our easy to use dashboard.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-			</div>
-			<!-- ./card-deck-->
-			<div class="text-center">
+				<!--./card-->
+
+
+				<div class="text-center">
 				<h2 class="title">Support</h2>
 				<div class="card-deck">
 					<div data-aos="fade-right" class="card contact-box bg-dark">
@@ -332,6 +354,7 @@
 				</div>
 			</div>
 			<!-- ./support -->
+
 			<h2 class=" text-center title ">Team</h2>
 			<div class="text-center card-deck">
 				<div data-aos="fade-right" class="card bg-dark mauto" style="width: 18rem;">

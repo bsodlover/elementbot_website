@@ -16,7 +16,6 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="./assets/css/styles.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<!-- Favicons -->
 		<link
@@ -52,6 +51,7 @@
 			content="/docs/4.5/assets/img/favicons/browserconfig.xml"
 		/>
 		<meta name="theme-color" content="#563d7c" />
+		<link href="./assets/css/styles.css" rel="stylesheet" />
 		<!-- Custom styles for this template -->
 		<link href="navbar-top-fixed.css" rel="stylesheet" />
 	</head>
@@ -201,111 +201,48 @@
 		<!-- end navbar-->
 		<!-- begin container-->
 		<div data-aos="fade-up" class="container text-white">
-			<h2 class="title text-center">Key features</h2>
-			<div class="card-deck">
+			<h2 class="title text-center">Reviews</h2>
 				<div data-aos="fade-right" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-warning (alias) card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">The best NSFW content</h5>
-						<p class="card-text">
-							Element Bot provides you the best NSFW content, directly from
-							reddit.
-						</p>
-					</div>
+  <div class=" text-center card-header">
+		<span class="float-left">User</span>
+		<div class="float-right">
+<span class="float-right"><i class="text-warning fa fa-star"></i></span><span class="float-right"><i class="text-warning fa fa-star"></i></span><span class="float-right"><i class="text-warning fa fa-star"></i></span><span class="float-right"><i class="text-warning fa fa-star"></i></span><span class="float-right"><i class="text-warning fa fa-star"></i></span>
+		</div>
+  </div>
+<div class="card-body">
+	<div>
+    <h5 class="card-title">Review title</h5>
+		<p class="card-text">Review blahblahblah </p>
+    <a href="#" class="btn main-gradient-bg center text-dark">See review</a>
+	</div>
+</div>
+  <span class="card-footer text-muted">
+    2 days ago
+		<strong>Using version 2.1.1 </strong>
+  </span>
+
 				</div>
 				<!-- ./card -->
-				<div data-aos="fade-top" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-sliders card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">A lot of managment features</h5>
-						<p class="card-text">
-							Element bot has managment features such as a welcome message,
-							leave message, custom events for the botlogs, lockdown system and
-							more.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-				<div data-aos="fade-left" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-smile-o card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Fun & XP system</h5>
-						<p class="card-text">
-							Element Bot has a big fun and XP system, to give levels to users
-							and have fun in the server.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-			</div>
-			<!-- ./card-deck-->
-			<div class="card-deck">
+
+			<h2 class="title text-center">Users Evolution</h2>
 				<div data-aos="fade-right" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-clock-o card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Fast & Stable</h5>
-						<p class="card-text">
-							Thanks to our dedicated server and efficient coding, Element Bot
-							is very stable and has low latency for a better experience.
-						</p>
-					</div>
+<div class="graph-div">
+            <div class="loader center-div"></div>
+						<canvas width="800" height="450" style="color: white" id="users_graph" class="graph" width="400" height="400"></canvas><br>
+        </div>
 				</div>
-				<!-- ./card -->
-				<div data-aos="fade-top" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-gears card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Smart Algorythm</h5>
-						<p class="card-text">
-							Element bot selects random NSFW images and doesn't repeat them
-							thanks to it's smart algorythm.
-						</p>
-					</div>
+				<!--./card-->
+			<h2 class="title text-center">Guild Evolution</h2>
+				<div data-aos="fade-right" class="card bg-dark border-success">
+<div class="graph-div">
+            <div class="loader center-div"></div>
+						<canvas width="800" height="450" style="color: white" id="guilds_graph" class="graph" width="400" height="400"></canvas><br>
+        </div>
 				</div>
-				<!-- ./card -->
-				<div data-aos="fade-left" class="card bg-dark border-success">
-					<div class="card-img-top">
-						<span
-							class="fa fa-edit card-img-top text-center fa-3x main-color"
-							alt="font-awesome icon of warning"
-						></span>
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Customizable & easy to use</h5>
-						<p class="card-text">
-							Element Bot has a lot of options, that are easily customizable
-							with our easy to use dashboard.
-						</p>
-					</div>
-				</div>
-				<!-- ./card -->
-			</div>
-			<!-- ./card-deck-->
-			<div class="text-center">
+				<!--./card-->
+
+
+				<div class="text-center">
 				<h2 class="title">Support</h2>
 				<div class="card-deck">
 					<div data-aos="fade-right" class="card contact-box bg-dark">
@@ -332,6 +269,7 @@
 				</div>
 			</div>
 			<!-- ./support -->
+
 			<h2 class=" text-center title ">Team</h2>
 			<div class="text-center card-deck">
 				<div data-aos="fade-right" class="card bg-dark mauto" style="width: 18rem;">

@@ -17,7 +17,7 @@ body {
 }
 .title {
 	background: -webkit-linear-gradient(#96c93d, #00b09b);
-	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	padding-top: 1.5rem;
 }
